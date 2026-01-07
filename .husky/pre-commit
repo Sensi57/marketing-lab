@@ -1,0 +1,3 @@
+echo "Running prettier"
+
+npx prettier --write **/*.{ts,tsx,json}
