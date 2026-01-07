@@ -1,0 +1,169 @@
+.input {
+    display: inline-flex; /* по умолчанию не растягиваемся */
+    flex-direction: column;
+    width: auto;
+
+    &--full {
+        width: 100%;
+        display: flex;
+    }
+
+    /* размеры корня для простоты */
+    &--s {
+    }
+    &--m {
+    }
+    &--l {
+    }
+}
+
+/* Внутренняя обёртка — управляет бордером/фоном/радиусом */
+.input__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #d0d4d9;
+    min-height: 38px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+    overflow: visible; /* чтобы label мог выходить за пределы */
+}
+
+/* focus state */
+.input__wrapper--focused {
+    border-color: #2b7cff;
+    box-shadow: 0 0 0 6px rgba(43, 124, 255, 0.08);
+}
+
+/* disabled / error states applied to wrapper */
+.input__wrapper--disabled {
+    background: #f6f7f9;
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+.input__wrapper--error {
+    border-color: #d93025;
+}
+
+/* Variants: применяются к wrapper (чтобы менять border/background) */
+.input__wrapper--primary {
+    background: #fff;
+    border-color: #d0d4d9;
+}
+.input__wrapper--secondary {
+    background: #f5f8fb;
+    border-color: #cbd6e6;
+}
+.input__wrapper--outlined {
+    background: transparent;
+    border-color: #2b7cff;
+    box-shadow: none;
+}
+
+/* Иконки (абсолютно позиционируются) */
+.input__icon-left,
+.input__icon-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    pointer-events: none;
+    z-index: 3;
+    color: #6b7280;
+}
+
+/* отступы для icon */
+.input__icon-left {
+    left: 10px;
+}
+.input__icon-right {
+    right: 10px;
+}
+
+/* Поле ввода — padding учтён выше padding wrapper */
+.input__field {
+    flex: 1 1 auto;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    padding: 14px 8px;
+    z-index: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* делаем отступы если есть иконки — будут переопределяться классами .input__has-icon-... ниже */
+
+    // Скрываем спиннеры для input[type="number"]
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &[type="number"] {
+        -moz-appearance: textfield;
+    }
+}
+
+/* Когда есть иконки — увеличиваем padding внутри поля */
+.input__has-icon-left .input__field {
+    padding-left: 40px;
+}
+.input__has-icon-right .input__field {
+    padding-right: 40px;
+}
+
+/* Label: поверх поля, но с фоновой подложкой и padding, чтобы "вырезать" бордер */
+.input__label {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #8b9198;
+    pointer-events: none;
+    transition: all 0.16s ease;
+    z-index: 4;
+    background: transparent; /* заменим на фон, когда активна */
+    padding: 0 6px;
+}
+
+/* Активная метка — поднимается над бордером и получает фон (чтобы не было наложения с бордером) */
+.input__label--active {
+    top: -8px;
+    font-size: 12px;
+    color: #2b7cff;
+    transform: none;
+    background: #fff;
+    z-index: 6;
+    padding: 0 8px;
+    line-height: 1;
+}
+
+/* Error text */
+.input__error {
+    margin-top: 6px;
+    color: #d93025;
+    font-size: 12px;
+}
+
+/* Размеры */
+.input--s .input__field {
+    font-size: 14px;
+    padding: 6px 6px;
+    min-height: 30px;
+}
+.input--m .input__field {
+    font-size: 16px;
+    padding: 12px 8px;
+    min-height: 48px;
+}
+.input--l .input__field {
+    font-size: 18px;
+    padding: 16px 10px;
+    min-height: 56px;
+}

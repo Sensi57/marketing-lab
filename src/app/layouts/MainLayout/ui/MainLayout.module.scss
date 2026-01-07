@@ -1,0 +1,17 @@
+.w {
+    height: 100vh;
+}
+
+.w-light {
+    background-color: white;
+    color: black;
+}
+.w-dark {
+    background-color: rgb(35, 35, 35);
+    color: white;
+}
+
+.content {
+    margin-top: 60px;
+    flex-grow: 1; /* Заставляет контент занимать оставшееся пространство */
+}
