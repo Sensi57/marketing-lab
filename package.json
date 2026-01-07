@@ -23,6 +23,8 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.3.0",
+    "@commitlint/config-conventional": "^20.3.0",
     "@eslint/js": "^9.36.0",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
@@ -32,6 +34,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "husky": "^9.1.7",
     "msw": "^2.11.6",
     "rollup-plugin-visualizer": "^6.0.5",
     "sass": "^1.93.3",

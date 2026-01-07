@@ -28,5 +28,5 @@
     //"noImplicitAny": true,
     "types": ["vite/client", "node"]
   },
-  "include": ["src", "commintlint.config.cjs", "src/entities/auth/api/.tsx"]
+  "include": ["src", "commitlint.config.cjs", "src/entities/auth/api/.tsx"]
 }
