@@ -1,4 +1,4 @@
-const matchTicket = /^(feat|fix|refactor)-\d+: .+$/;
+const matchTicket = /^(feat|fix|refactor|chore)-\d+: .+$/;
 
 module.exports = {
     parserPreset: {

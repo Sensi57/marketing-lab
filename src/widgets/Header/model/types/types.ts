@@ -1,13 +1,13 @@
 export interface IMenu {
-  title: string;
-  items: IMenuItems[];
-  collapsed?: boolean;
-  permission?: string[];
+    title: string;
+    items: IMenuItems[];
+    collapsed?: boolean;
+    permission?: string[];
 }
 
 export interface IMenuItems {
-  label: string;
-  href: string;
-  external?: boolean;
-  icon?: React.ComponentType;
+    label: string;
+    href: string;
+    external?: boolean;
+    icon?: React.ComponentType;
 }
