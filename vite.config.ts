@@ -42,15 +42,15 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         css: {
             modules: {
                 scopeBehaviour: 'local',
-                generateScopedName: isDev
-                    ? 'sensi__[local]__[hash:base64:5]'
-                    : 'sensi__[hash:base64:5]',
+                ...(isDev
+                    ? { generateScopedName: '[name]__[local]___[hash:base64:5]' }
+                    : { generateScopedName: 'mv-[hash:base64:5]' }),
             },
-            // preprocessorOptions: {
-            //   scss: {
-            //     additionalData: `@import "@/styles/variables.scss";`,
-            //   },
-            // },
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@use "@/app/styles/tokens" as *;`,
+                },
+            },
             devSourcemap: isDev,
         },
 
