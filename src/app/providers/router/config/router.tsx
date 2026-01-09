@@ -13,10 +13,7 @@ export const router = createBrowserRouter([
             </AuthRoute>
         ),
     },
-    // {
-    //     path: ROUTES.preview.route,
-    //     element: <Preview />, // Если Preview самостоятельный маршрут
-    // },
+
     {
         path: '/auth',
         element: (

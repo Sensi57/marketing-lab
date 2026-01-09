@@ -1,0 +1,25 @@
+$light-theme: (
+    bg: #ffffff,
+    text: #111111,
+    primary: #3478f6,
+);
+
+$dark-theme: (
+    bg: #111111,
+    text: #ffffff,
+    primary: #5aa2ff,
+);
+
+@function theme-props($map) {
+    // @each $key, $value in $map {
+    //     #{--#{$key}}: #{$value};
+    // }
+}
+
+:root[data-theme='light'] {
+    @include theme-props($light-theme);
+}
+
+:root[data-theme='dark'] {
+    @include theme-props($dark-theme);
+}
