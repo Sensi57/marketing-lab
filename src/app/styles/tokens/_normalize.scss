@@ -1,3 +1,52 @@
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* убираем bullets/numbers */
+}
+li {
+    margin: 0;
+    padding: 0;
+}
+
 a {
-    text-decoration: none;
+    text-decoration: none; /* убираем underline */
+    color: inherit; /* чтобы наследовал цвет текста */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0; /* убираем дефолтные отступы */
+    font-weight: normal; /* можно нормализовать вес */
+}
+
+input,
+textarea,
+select,
+button {
+    margin: 0;
+    padding: 0;
+    font: inherit; /* наследуем шрифт от родителя */
+    border: none; /* убираем рамку по умолчанию */
+    outline: none; /* убираем синий фокус */
+    background: none; /* прозрачный фон */
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none; /* убираем обводку при фокусе */
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }

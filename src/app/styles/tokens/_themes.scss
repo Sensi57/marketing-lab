@@ -10,11 +10,11 @@ $dark-theme: (
     primary: #5aa2ff,
 );
 
-// @function theme-props($map) {
-//     @each $key, $value in $map {
-//         #{--#{$key}}: #{$value};
-//     }
-// }
+@function theme-props($map) {
+    // @each $key, $value in $map {
+    //     #{--#{$key}}: #{$value};
+    // }
+}
 
 :root[data-theme='light'] {
     @include theme-props($light-theme);
